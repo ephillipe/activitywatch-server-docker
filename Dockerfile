@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-ENV VERSION=0.7.1
+ENV VERSION=0.9.2
 
 # Requirements
 RUN apt-get update \
@@ -22,7 +22,7 @@ RUN curl -L -o /tmp/activitywatch.zip https://github.com/ActivityWatch/activityw
     && chmod -x /activitywatch/*.so* \
     && rm /tmp/activitywatch.zip
 
-ENTRYPOINT ["/usr/bin/dumb-init","--"]
-CMD ["/activitywatch/aw-server"]
+# ENTRYPOINT ["/usr/bin/dumb-init","--"]
+# CMD ["/activitywatch/aw-server"]
 
 EXPOSE 80
